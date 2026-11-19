@@ -20,7 +20,9 @@ Format and rules are in `INSTRUCTIONS.md`. Newest entries go at the bottom; numb
   BC and Ontario than in Alberta.
 - Expected effect: bear exposure falls by about one-eighth. Given bears are 0.2–0.5% of US deaths,
   expect this to be noise in every scenario. It is a correctness fix, not a result-mover.
-- Status: open
+- Status: deferred
+- Model judge: Deferred on 19 November 2026 at v0.1.3.9.2. That version only fills in potash site positions and imagery and
+  changes no parameter. This entry gets a ruling at the next version that changes the model's rules (0.1.3.10).
 
 ## R-002: Raise the black/grizzly fatality share, and drop the armed-discount rationale
 
@@ -49,7 +51,9 @@ Format and rules are in `INSTRUCTIONS.md`. Newest entries go at the bottom; numb
   Alberta detachment; outcome shares should stay within noise. In the Arctic seizure, where total
   deaths are ~10, keep the polar-bear figures unchanged so this does not leak into the one
   scenario where wildlife moves the result.
-- Status: open
+- Status: deferred
+- Model judge: Deferred on 19 November 2026 at v0.1.3.9.2. That version only fills in potash site positions and imagery and
+  changes no parameter. This entry gets a ruling at the next version that changes the model's rules (0.1.3.10).
 
 ## R-003: Replace the low-confidence bear-attack datum, split grizzly from black, and make the
 ## exposure multiplier explicit
@@ -86,4 +90,6 @@ Format and rules are in `INSTRUCTIONS.md`. Newest entries go at the bottom; numb
   top once camp attractants are considered (see the attractant mechanism in the review, which I
   have not raised as its own entry because the module would need a camp-density input it does not
   have).
-- Status: open
+- Status: deferred
+- Model judge: Deferred on 19 November 2026 at v0.1.3.9.2. That version only fills in potash site positions and imagery and
+  changes no parameter. This entry gets a ruling at the next version that changes the model's rules (0.1.3.10).
