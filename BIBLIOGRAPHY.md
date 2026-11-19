@@ -1,8 +1,8 @@
 # Bibliography
 
 ## Read
-| Paper | Kind | PDF | Review | Bears on |
-|---|---|---|---|---|
+| Paper | Kind | PDF | Obtained from | Review | Bears on |
+|---|---|---|---|---|---|
 
 ## Read, not useful or out of scope
 | Paper | Why |

@@ -23,7 +23,8 @@ hand the builder recommendations it can act on. You do not change the model.
 2. Move it from `papers/inbox/` to `papers/` as `firstauthor-year-short-title.pdf`.
 3. Write `reviews/firstauthor-year-short-title.md` (format below).
 4. If it bears on a parameter or mechanism, add or update an entry in `RECOMMENDATIONS.md`.
-5. Add it to `BIBLIOGRAPHY.md`.
+5. Add it to `BIBLIOGRAPHY.md`, with the link Kevin obtained it from (`papers/inbox/links.md`, or his message).
+   If there is no link for a paper, ask him for it; do not guess one.
 6. Commit, with a message naming the paper.
 
 If a paper has nothing to say about the model, a three-line review saying so is the right output.
