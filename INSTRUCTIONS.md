@@ -7,7 +7,8 @@ hand the builder recommendations it can act on. You do not change the model.
 
 ## Where things are
 
-- **This repository** is yours to write. Papers arrive in `papers/inbox/`.
+- **This repository** is yours to write, and it is public. Papers arrive in `papers/inbox/`. They are articles
+  aggregated from Google Scholar as posted by their authors; add a paper only if it came that way.
 - **The public site**, https://forceonforce.si. `sources.html` lists every parameter with its value and source,
   `modules.html` each module's measured effect, `roadmap.html` every version, `method.html` the limits.
 - **Project docs.** The `claude/force-on-force-*.md` files hold each version's results.
@@ -46,8 +47,8 @@ model lacks.
 ## Rules
 
 - **Cite only what you have read.** Give author, year, title, venue, DOI or URL, and the page.
-- **Quote the passage that carries the number or claim, verbatim, with its page.** This is a private research
-  repository and the exact wording is the data.
+- **Quote the sentence or two that carries the number or claim, verbatim, with its page.** The exact wording is
+  the data. This repository is public, so keep quotes to what the point needs and never reproduce a section.
 - **Keep three things separate every time:** what the paper found; the conditions it found it under; your
   judgement on whether that transfers to a US–Canada war. Most of this literature is about expeditionary wars
   far from home. Say when a finding may not transfer.

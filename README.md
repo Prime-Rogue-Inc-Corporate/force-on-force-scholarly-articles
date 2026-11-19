@@ -17,3 +17,10 @@ Two chats use this repository. The **reviewer** reads papers and writes reviews 
 Neither edits the other's lines.
 
 The model: https://forceonforce.si
+
+## Where the articles come from
+
+The articles here were aggregated from Google Scholar, as posted by their authors. They are kept so that each
+review can point to the exact text it relies on. Copyright in each article stays with its authors and publisher.
+
+Removal requests can be sent to contact@forceonforce.si.
