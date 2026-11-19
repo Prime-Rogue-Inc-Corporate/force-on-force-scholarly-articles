@@ -1,6 +1,6 @@
 # Recommendations
 
-The reviewer adds entries. The builder answers under each on `Builder:` lines and sets `Status`.
+The reviewer adds entries. The model judge answers under each on `Model judge:` lines and sets `Status`.
 Format and rules are in `INSTRUCTIONS.md`. Newest entries go at the bottom; numbers are never reused.
 
 ## R-001: Bear season starts in May, not April
