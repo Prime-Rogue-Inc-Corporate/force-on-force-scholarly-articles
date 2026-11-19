@@ -15,11 +15,10 @@ need from Kevin.
 
 - `claude/force-on-force-architecture.md` (Project doc).
 - https://forceonforce.si/sources.html — all 224 parameters, read in three passes.
-- https://forceonforce.si/method.html **could not be read.** The site returned a client error
-  on two attempts in this session. Nothing below reflects the limits that page states, which
-  is a real gap: the Method page is where the model's own account of its faults lives. I will
-  read it before the first review if it becomes reachable, and if it does not, Kevin can paste
-  it into the chat.
+- `method.html` — read from source in `force-on-force-front-end`, after the live page returned a
+  client error twice. Its section 6.0, "Known faults", is the most useful document in the project
+  for this job: it already names what is uncalibrated and, in several places, the case base that
+  would fix it. The queue below is aligned to it (see "What the Method page already concedes").
 
 I have not read `modules.html` yet; I will read it before the first recommendation, since a
 recommendation needs the measured effect of a module to say which results should move.
@@ -32,6 +31,9 @@ Rank each candidate paper by **leverage × weakness**:
   (`attacker_withdrawal`, `defender_capitulation`, `annexation_consolidated`) rather than an
   intermediate quantity. Parameters inside the political layer dominate here, because in this
   model the war ends when US support falls or Canada capitulates, not when a line moves.
+  Leverage is not my guess where the Method page states it: section 6.0 says initial attacker
+  public support is the dominant driver of the Canada-US results, and that outranks the
+  casualty-response slope I would otherwise have put first.
 - *Weakness*: what the Sources page says the value rests on. A large majority of the 224
   parameters read "modeller estimate" or "modeller judgement". Two are worse than that and are
   worth naming: `political.casualty_reference` is "fitted by eye", and
@@ -78,7 +80,15 @@ them pure judgement:
 | `political.withdrawal_max_hazard` | 0.01 – 0.025 – 0.05 | modeller estimate; Iraq 2006–08 |
 | `political.election_hazard_mult` | 3 – 5 – 8 | modeller estimate (1968, 2008) |
 
-What would settle them: the casualty-tolerance literature proper, and specifically the dispute
+Ahead of all five, though, is the quantity the Method page calls dominant: **initial** US
+support, `S0` in the architecture's support equation, which the Sources page does not list among
+the parameters I read and which section 6.0 says should stop being a single sampled number and
+become a scenario-level model fed by polling series (it names Angus Reid, YouGov, Gallup). That
+reframes topic 1: the most valuable paper here is not one that refines the slope at which support
+decays, but one that bears on where support starts for a war of annexation against a neighbour,
+and on how a polling series should be turned into a prior. I will treat that as the first ask.
+
+What would settle the five: the casualty-tolerance literature proper, and specifically the dispute
 between the log-casualties position and the success-expectation position, since the model's
 support equation already contains both a Mueller log term and a Gelpi/Feaver/Reifler-style
 success term and the weighting between them is the modeller's. Also wanted: anything that
@@ -213,12 +223,36 @@ each against what arrives:
 1. **Papers.** The inbox is empty. Nothing can be reviewed until PDFs land in `papers/inbox/`,
    with their Google Scholar links in `papers/inbox/links.md` or pasted in the chat. If you want
    the queue above followed, queue 0 and topic 1 are where PDFs pay back most.
-2. **`method.html` is unreadable from here.** Two fetches failed with a client error. Paste the
-   page, or point me at its source in the front-end repo.
-3. **Repository access.** Attaching the repository with push access was refused by my session's
-   permission classifier, and writing through the GitHub API returned 403 (not accessible to the
-   integration). I can read the repository but not commit to it. Before the first review we also
-   need a route for me to read a PDF's bytes — attaching the repo, or you uploading PDFs into the
-   chat. I will not review from an abstract.
-4. **The model's code repository name**, when the builder puts it on GitHub, so that reviews can
+2. **The live `method.html` returns a client error** while `index.html` and `sources.html` serve
+   fine. I read the page from the front-end repo instead, so this is not blocking me, but a page
+   the public cannot load is worth a look.
+3. **The model's code repository name**, when the builder puts it on GitHub, so that reviews can
    check the implemented form of a mechanism and not just the site's description of it.
+4. **A decision on `nato_members.*`.** Twenty-odd parameters rest on one unrefereed report. If you
+   want that left as judgement, say so and I will stop treating it as a gap to be filled; if not,
+   it needs its own entry in `RECOMMENDATIONS.md` saying the sourcing is single-threaded.
+
+## What the Method page already concedes
+
+Section 6.0 names faults and, for several, the case base that would fix them. Where it does, my
+job is to find those cases' literature rather than to re-derive the gap. Mapping its list onto the
+seven topics:
+
+| Method page fault | Topic | What it asks for |
+|---|---|---|
+| Initial attacker support is the dominant driver; should be fed by polling series | 1 | Polling-to-prior method; where support starts, not just its slope |
+| Defender capitulation hazard is uncalibrated | 2 | A case base: Denmark 1940, Norway 1940, France 1940, Czechoslovakia 1938–39, Baltic states 1940, Kuwait 1990, Georgia 2008, Crimea 2014 — and a *collaborationist-government* path modelled separately from capitulation by the legitimate government |
+| Occupation backtest is in-sample (KIA rate tuned to Iraq 2003–11) | 3 | Out-of-sample cases: Afghanistan 2001–21, Vietnam 1965–73, Soviet Afghanistan 1979–89, Chechnya |
+| Armed propensity has no Canadian precedent | 2, 3 | Comparative evidence on resistance in high-income democracies; civil resistance (Chenoweth) as its own channel with its own outputs |
+| Economic coefficients are order-of-magnitude placeholders | 5 | OECD TiVA Canada–US value added; Bank of Canada / CBO trade-shock elasticities; EIA refinery dependence (PADD 2, PADD 4) |
+| Mobilization's effect on Canadian will is one hand-set number | 2 | The page says it decides whether the 400,000 plan is worth 4 points or 12 — the single highest-value number in the mobilization module |
+| Training invisible after the opening fight; mobilized country counts its dead like an unmobilized one | 2 | Whether the literature treats trained-manpower quality and casualty-tolerance-under-mobilization as separable |
+| Provincial governments are not actors | 3 | Occupation-collaboration literature at subnational level |
+
+Two consequences for how I work. First, several of these are requests for *historical cases*, not
+for parameter estimates, and most of those cases are 1938–1945 European. Much of that literature
+is books rather than articles; Google Scholar-posted PDFs may not cover it, and I will say so
+rather than review a thin proxy. Second, the page's own framing — "a grognard exercise, not
+science", nothing peer reviewed, coefficients labelled as judgement — is the right standard to
+hold reviews to. My output should narrow ranges where a paper genuinely narrows them and say "keep
+as judgement" where it does not, not manufacture precision the model does not claim.
